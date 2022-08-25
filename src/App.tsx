@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import BreweryList from "./BreweryList";
+import BrewerySearch from "./BrewerySearch";
+import React, { useState } from "react";
 
+interface dbProps {
+  name: string;
+  type: string;
+  adress: string;
+  website: string;
+}
 function App() {
+  const [databaseInfo, setDatabaseInfo] = useState<dbProps[]>([]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header className="App-header">Brewery List</header>
+      <BrewerySearch setDatabaseInfo={setDatabaseInfo} />
+      <BreweryList databaseInfo={databaseInfo} />
     </div>
   );
 }

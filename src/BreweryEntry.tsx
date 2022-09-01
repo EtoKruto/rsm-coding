@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import GMap from "./GMap";
+import BreweryDetails from "./BreweryDetails";
 
 function removeURLWWW(str: string) {
   return str
@@ -8,7 +9,16 @@ function removeURLWWW(str: string) {
     .replace("www.", "")
     .replace("/", "");
 }
-function BreweryEntry({ brewery }: any) {
+function BreweryEntry({ brewery, index }: any) {
+  const [isOpened, setIsOpened] = useState(false);
+
+  console.log("isOpened", isOpened);
+  console.log("brewery", brewery);
+  console.log("index", index);
+
+  function toggle() {
+    setIsOpened((wasOpened) => !wasOpened);
+  }
   const coordintates = {
     lat: brewery.latitude,
     lng: brewery.longitude,
@@ -17,49 +27,82 @@ function BreweryEntry({ brewery }: any) {
   return (
     <div
       className="breweryEntry"
-      style={{ display: "flex", justifyContent: "space-around", margin: 100 }}
+      onClick={toggle}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+      }}
     >
-      <div className="info-breweryEntry">
-        <div className="title-breweryEntry">
-          <h1>{brewery.name}</h1>
-        </div>
+      <div
+        className="info-breweryEntry"
+        style={{
+          marginLeft: "5em",
+        }}
+      >
         <div
-          className="description-breweryEntry"
+          className="Container-breweryEntry"
           style={{
             display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
+            alignItems: "center",
+            marginBottom: "3em",
           }}
         >
-          <p style={{ fontWeight: "normal" }}>
-            {" "}
-            <strong>Type:</strong> {brewery.brewery_type}
-          </p>
-          <p>
-            <strong>Address:</strong>{" "}
-            {brewery.street +
-              ", " +
-              brewery.city +
-              ", " +
-              brewery.country +
-              ", " +
-              brewery.postal_code}
-          </p>
-          <p>
-            <strong>URL: </strong>{" "}
-            {brewery.website_url ? (
-              <a href={brewery.website_url} target="_blank" rel="noreferrer">
-                {removeURLWWW(brewery.website_url) ?? brewery.website_url}
-              </a>
-            ) : (
-              "Not Available"
-            )}
-          </p>
+          <div className="number-breweryEntry">
+            <h1 style={{ marginRight: "2em" }}>{index + 1}</h1>
+          </div>
+          <div
+            className="description-breweryEntry"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+            }}
+          >
+            <div
+              style={{
+                marginBottom: "1em",
+              }}
+            >
+              <div style={{ fontWeight: "bold", fontSize: "1.8em" }}>
+                {brewery.name}
+              </div>
+            </div>
+
+            <div style={{ fontWeight: "normal" }}>
+              {" "}
+              <strong>Type:</strong> {brewery.brewery_type}
+            </div>
+            <div>
+              <strong>Address:</strong>{" "}
+              {brewery.street +
+                ", " +
+                brewery.city +
+                ", " +
+                brewery.country +
+                ", " +
+                brewery.postal_code}
+            </div>
+            <div>
+              <strong>URL: </strong>{" "}
+              {brewery.website_url ? (
+                <a href={brewery.website_url} target="_blank" rel="noreferrer">
+                  {removeURLWWW(brewery.website_url) ?? brewery.website_url}
+                </a>
+              ) : (
+                "Not Available"
+              )}
+            </div>
+          </div>
         </div>
       </div>
-      <div className="map-breweryEntry">
-        <GMap coord={coordintates} />
-      </div>
+
+      {isOpened ? (
+        <div className="boxContent">
+          <BreweryDetails brewery={brewery} coord={coordintates} />
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }

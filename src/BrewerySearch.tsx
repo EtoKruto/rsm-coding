@@ -12,7 +12,8 @@ const BrewerySearch = ({ setDatabaseInfo }: any) => {
     setUserInput(e.target.value);
   };
 
-  const handleCitySearch = () => {
+  const handleCitySearch = (e: any) => {
+    e.preventDefault();
     const city = convertStringToUnderscore(userInput);
 
     axios
@@ -33,15 +34,13 @@ const BrewerySearch = ({ setDatabaseInfo }: any) => {
 
   return (
     <div className="brewerySearch">
-      <form>
+      <form className="breweryForm" onSubmit={handleCitySearch}>
         <input
           placeholder="Input City..."
           value={userInput}
           onChange={handleChange}
         />
-        <button type="button" onClick={() => handleCitySearch()}>
-          {"Search"}
-        </button>
+        <button type="submit">{"Search"}</button>
       </form>
     </div>
   );

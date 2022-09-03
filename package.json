@@ -46,7 +46,6 @@
     ]
   },
   "type": "module",
-  "proxy": "http://localhost:3001",
   "devDependencies": {
     "@types/google-map-react": "^2.1.7",
     "@types/react": "^18.0.18",

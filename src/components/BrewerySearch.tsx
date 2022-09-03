@@ -17,7 +17,9 @@ const BrewerySearch = ({ setDatabaseInfo }: any) => {
     const city = convertStringToUnderscore(userInput);
 
     axios
-      .get(`http://192.168.1.25:3001/breweries?city=${city}`)
+      .get(
+        `https://api.openbrewerydb.org/breweries?by_city=${city}&per_page=10`
+      )
       .then((response) => {
         if (response.data.length < 1) {
           alert("No breweries found, try another search");

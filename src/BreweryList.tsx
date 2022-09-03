@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import BreweryEntry from "./BreweryEntry";
 
 function BrewerList({ databaseInfo }: any) {

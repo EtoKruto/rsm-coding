@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 function convertStringToUnderscore(str: string) {
@@ -33,14 +33,23 @@ const BrewerySearch = ({ setDatabaseInfo }: any) => {
   };
 
   return (
-    <div className="brewerySearch">
-      <form className="breweryForm" onSubmit={handleCitySearch}>
+    <div>
+      <form
+        className="flex space-x-2 justify-center"
+        onSubmit={handleCitySearch}
+      >
         <input
+          className="text-black w-full rounded-lg border-gray-300 pl-3 pr-12 focus:border-indigo-500 focus:ring-indigo-500 sm:text-xlg"
           placeholder="Input City..."
           value={userInput}
           onChange={handleChange}
         />
-        <button type="submit">{"Search"}</button>
+        <button
+          className=" rounded-lg px-4 py-2 bg-blue-500 text-blue-100 hover:bg-blue-600 duration-300"
+          type="submit"
+        >
+          {"Search"}
+        </button>
       </form>
     </div>
   );

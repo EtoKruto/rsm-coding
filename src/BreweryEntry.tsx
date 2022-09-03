@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import GMap from "./GMap";
+import { useState } from "react";
 import BreweryDetails from "./BreweryDetails";
 
 function removeURLWWW(str: string) {
@@ -9,12 +8,12 @@ function removeURLWWW(str: string) {
     .replace("www.", "")
     .replace("/", "");
 }
+function capitalizeFirstLetter(str: string) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 function BreweryEntry({ brewery, index }: any) {
   const [isOpened, setIsOpened] = useState(false);
-
-  console.log("isOpened", isOpened);
-  console.log("brewery", brewery);
-  console.log("index", index);
 
   function toggle() {
     setIsOpened((wasOpened) => !wasOpened);
@@ -25,52 +24,22 @@ function BreweryEntry({ brewery, index }: any) {
   };
 
   return (
-    <div
-      className="breweryEntry"
-      onClick={toggle}
-      style={{
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <div
-        className="info-breweryEntry"
-        style={{
-          marginLeft: "5em",
-        }}
-      >
-        <div
-          className="Container-breweryEntry"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            marginBottom: "3em",
-          }}
-        >
-          <div className="number-breweryEntry">
-            <h1 style={{ marginRight: "2em" }}>{index + 1}</h1>
+    <div className="flex-col">
+      <div className="ml-20">
+        <div className="flex items-center">
+          <div className="text-3xl">
+            <h1 className="mr-4">{index + 1}</h1>
           </div>
           <div
-            className="description-breweryEntry"
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-            }}
+            className="flex-col items-start text-left border-2 border-black rounded-3xl p-4 m-4 transition-transform duration-500 hover:scale-110 active:scale-100"
+            onClick={toggle}
           >
-            <div
-              style={{
-                marginBottom: "1em",
-              }}
-            >
-              <div style={{ fontWeight: "bold", fontSize: "1.8em" }}>
-                {brewery.name}
-              </div>
+            <div className="text-3xl font-bold mb-5">
+              {capitalizeFirstLetter(brewery.name)}
             </div>
-
-            <div style={{ fontWeight: "normal" }}>
-              {" "}
-              <strong>Type:</strong> {brewery.brewery_type}
+            <div>
+              <strong>Type:</strong>{" "}
+              {capitalizeFirstLetter(brewery.brewery_type)}
             </div>
             <div>
               <strong>Address:</strong>{" "}
@@ -83,10 +52,12 @@ function BreweryEntry({ brewery, index }: any) {
                 brewery.postal_code}
             </div>
             <div>
-              <strong>URL: </strong>{" "}
+              <strong>Website: </strong>{" "}
               {brewery.website_url ? (
-                <a href={brewery.website_url} target="_blank" rel="noreferrer">
-                  {removeURLWWW(brewery.website_url) ?? brewery.website_url}
+                <a className="text-blue-500 hover:text-sky-400" href={brewery.website_url} target="_blank" rel="noreferrer">
+                  {capitalizeFirstLetter(
+                    removeURLWWW(brewery.website_url) ?? brewery.website_url
+                  )}
                 </a>
               ) : (
                 "Not Available"
@@ -97,7 +68,7 @@ function BreweryEntry({ brewery, index }: any) {
       </div>
 
       {isOpened ? (
-        <div className="boxContent">
+        <div className="bg-purple-400/75 h-100 rounded-3xl ml-32 mr-24">
           <BreweryDetails brewery={brewery} coord={coordintates} />
         </div>
       ) : (
@@ -108,4 +79,3 @@ function BreweryEntry({ brewery, index }: any) {
 }
 
 export default BreweryEntry;
-// longtitude={brewery.longtitude} latitude={brewery.latitude}

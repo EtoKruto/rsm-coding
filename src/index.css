@@ -1,13 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* defaults */
+/* html,
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+} */
+
+.App {
+  text-align: center;
+  height: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* .App-link {
+  color: #61dafb;
+} */
+
+/* APP */
+/* .App-header {
+  font-size: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: teal;
+  color: #fff;
+  height: 1.5em;
+} */
+/* #logo {
+  height: 100%;
+  object-fit: contain;
+} */
+
+/* BrewerySearch */
+/* .breweryForm {
+  display: flex;
+} */
+
+/* BreweryEntry */
+
+/* .breweryEntry {
+  display: flex;
+  flex-direction: column;
+} */
+/* .title-breweryEntry {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 0.8em;
+} */
+/* .info-breweryEntry {
+  margin-left: 5em;
+} */
+/* .description-breweryEntry {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  border: black ridge 1px;
+  border-radius: 1.5em;
+  margin: 1em;
+  padding: 1em;
+  transition: transform 0.5s;
 }
+.container-breweryEntry {
+  display: flex;
+
+  align-items: center;
+}
+.description-breweryEntry:hover {
+  transform: scale(1.1);
+}
+.description-breweryEntry:active {
+  transform: scale(1);
+} */
+
+/* .detailView-breweryEntry {
+  display: flex;
+  justify-content: space-around;
+  margin: 100px;
+  align-items: center;
+  border-radius: 1.5em;
+  margin: 1em;
+  padding: 1em;
+  align-items: center;
+}
+
+.detailSection-breweryEntry {
+  background-color: #dddddd;
+  max-height: 100%;
+} */

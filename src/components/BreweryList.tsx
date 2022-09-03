@@ -8,7 +8,9 @@ function BrewerList({ databaseInfo }: any) {
           <BreweryEntry key={brewery.id} brewery={brewery} index={index} />
         ))
       ) : (
-        <h1>^ Search for a Brewery ^</h1>
+        <h1 className="pr-40 text-3xl text-right pt-16">
+          ^ Search for a Brewery ^
+        </h1>
       )}
     </div>
   );

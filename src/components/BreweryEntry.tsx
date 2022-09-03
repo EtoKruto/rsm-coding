@@ -54,7 +54,12 @@ function BreweryEntry({ brewery, index }: any) {
             <div>
               <strong>Website: </strong>{" "}
               {brewery.website_url ? (
-                <a className="text-blue-500 hover:text-sky-400" href={brewery.website_url} target="_blank" rel="noreferrer">
+                <a
+                  className="text-blue-500 hover:text-sky-400"
+                  href={brewery.website_url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {capitalizeFirstLetter(
                     removeURLWWW(brewery.website_url) ?? brewery.website_url
                   )}
@@ -69,7 +74,11 @@ function BreweryEntry({ brewery, index }: any) {
 
       {isOpened ? (
         <div className="bg-purple-400/75 h-100 rounded-3xl ml-32 mr-24">
-          <BreweryDetails brewery={brewery} coord={coordintates} />
+          <BreweryDetails
+            brewery={brewery}
+            coord={coordintates}
+            setIsOpened={setIsOpened}
+          />
         </div>
       ) : (
         <></>

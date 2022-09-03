@@ -21,6 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "buildCSS": "npx tailwindcss -i ./src/index.css -o ./src/tailwind.css --watch",
     "server-dev": "nodemon src/API/index.js",
     "build": "react-scripts build",
     "test": "react-scripts test",

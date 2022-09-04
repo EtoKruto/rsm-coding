@@ -1,46 +1,53 @@
-# Getting Started with Create React App
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/92830192/188291055-341d0f55-6d53-40ef-88c1-572fbf109583.png" />
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <div align="center">
+            <span>Front-end app to search and return Breweries given a city name </span>
 
-## Available Scripts
+### HOSTED ON NETLIFY https://brew-list-rsm.netlify.app/ ###
 
-In the project directory, you can run:
+</div>
 
-### `npm start`
+## App Preview
+<br />
+  <img src="https://media.giphy.com/media/GET7ctS0NdQfxG0Gta/giphy.gif"/><br />
+</div>
+  
+## Building and running on localhost
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+First install dependencies:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```sh
+npm install
+```
+Create ENV file in ROOT folder (make sure this matches .gitignore name):
+```sh
+REACT_APP_GOOGLE_MAPS_API_KEY = Google Map API String (Found  [HERE](https://developers.google.com/maps) 
+```
+## Running
 
-### `npm test`
+Open `localHost:3000`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
+Setup and Configuration \
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white)
 
-### `npm run build`
+Front End Development : Javascript, React.js, Axios, HTML, CSS \
+![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+API: Google Maps API \
+![Google Maps](https://img.shields.io/badge/Google%20Maps-API-blue)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Back End Development: Node.js, Express.js \
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Deployment: Netlify \
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e410e06e-c68c-42bd-b43a-d5c48e155c72/deploy-status)](https://app.netlify.com/sites/brew-list-rsm/deploys)

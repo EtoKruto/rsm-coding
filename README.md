@@ -23,7 +23,7 @@ npm install
 ```
 Create ENV file in ROOT folder (make sure this matches .gitignore name):
 ```sh
-REACT_APP_GOOGLE_MAPS_API_KEY = Google Map API String (Found  [HERE](https://developers.google.com/maps) 
+REACT_APP_GOOGLE_MAPS_API_KEY = Google Map API String Found on https://developers.google.com/maps
 ```
 ## Running
 
